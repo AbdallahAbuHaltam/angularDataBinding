@@ -5,19 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  newServerName:string='';
-  newServerContent:string='';
-  serverElements=[];
+export class AppComponent { 
+  serverElements=[{
+    type:'server',
+    name:'TestServer',
+    content:'A Test only'
+  }];
 
-  onAddServer(){
-    this.serverElements.push(
-      {name : this.newServerName, content : this.newServerContent,type:'server'}
-    );
-  }
-  onAddBluePrint(){
-    this.serverElements.push(
-      {name : this.newServerName, content : this.newServerContent,type:'blueprint'}
-    );
-  }
+  
 }
