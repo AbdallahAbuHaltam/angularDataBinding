@@ -6,21 +6,21 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent {
-  newServerName:string='';
+  // newServerName:string='';
   newServerContent:string='';
   @Output() serverCreated=new EventEmitter<{serverName:string,serverContent:string}>();
   @Output() blueprintCreated=new EventEmitter<{serverName:string,serverContent:string}>();
 
 
 
-  onAddServer(){
+  onAddServer(nameInput:HTMLInputElement){
     this.serverCreated.emit(
-      {serverName:this.newServerName,serverContent:this.newServerContent}
+      {serverName:nameInput.value,serverContent:this.newServerContent}
     );
   }
-  onAddBluePrint(){
+  onAddBluePrint(nameInput:HTMLInputElement){
     this.blueprintCreated.emit(
-      {serverName:this.newServerName,serverContent:this.newServerContent}
+      {serverName:nameInput.value,serverContent:this.newServerContent}
     );
   }
 }
